@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.css'; 
+import ItemCardList from './ItemCardList';
+import item1Image from './photos/item1.jpg';
+import item2Image from './photos/item2.jpg';
+
+const items = [
+  {
+    imageUrl: item1Image,
+    description: 'FLower 1 ',
+  },
+  {
+    imageUrl: item2Image,
+    description: 'Flower 2',
+  },
+  {
+    imageUrl:'https://picsum.photos/200',
+    description:'Random online'
+  }
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Item List</h1>
+      <ItemCardList items={items} />
     </div>
   );
 }
